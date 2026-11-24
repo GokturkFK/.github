@@ -2,15 +2,13 @@
 
 # GokturkFK
 
-**Siber Güvenlik Mühendisliği · Açık Kaynak Savunma Platformları · Kurumsal Yazılım**
+**SaaS Ürünleri · Oyun Geliştirme · Kurumsal Yazılım · Açık Kaynak Güvenlik**
 
 <br/>
 
 [![GitHub Org](https://img.shields.io/badge/GitHub-GokturkFK-181717?style=flat-square&logo=github)](https://github.com/GokturkFK)
-[![Go](https://img.shields.io/badge/Go-1.25-00ADD8?style=flat-square&logo=go&logoColor=white)](https://go.dev/)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Docker](https://img.shields.io/badge/Docker-Air--Gapped%20Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Storage-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Security Policy](https://img.shields.io/badge/Security-Policy-0ea5e9?style=flat-square)](../SECURITY.md)
+[![Contributing](https://img.shields.io/badge/Open%20Source-Contributing-10b981?style=flat-square)](../CONTRIBUTING.md)
 
 *Kurucular: [**Kübra Uzun**](https://github.com/uzunkubra50) & [**Fetih Çakmak**](https://github.com/fetihcakmak)*
 
@@ -22,52 +20,102 @@
 
 ## Biz Kimiz
 
-**GokturkFK**, yüksek güvenceli **açık kaynak siber güvenlik platformları** ve **kurumsal yazılım çözümleri** geliştiren bağımsız bir yazılım ve güvenlik mühendisliği ekibidir.
+**GokturkFK**, çok kiracılı **SaaS ürünleri**, özgün **strateji oyunları**, **kurumsal yazılım çözümleri** ve **açık kaynak siber güvenlik platformları** geliştiren bağımsız bir yazılım mühendisliği organizasyonudur.
 
-Mühendislik odağımız; ölçülebilir, deterministik ve üretim ortamlarında sürdürülebilir sistemler inşa etmektir. Açık kaynak tarafında aktif savunma, kimlik güvenliği, yapay zekâ çalışma zamanı koruması ve regülasyon uyumluluğu üzerine modüler ürünler geliştiriyor; bunun yanında özel kurumsal projelerde uçtan uca yazılım mühendisliği ve DevSecOps çözümleri üretiyoruz.
-
----
-
-## Açık Kaynak Siber Güvenlik Ekosistemi
-
-### Birleşik Aldatma ve Kimlik Güvenliği Platformu (Go)
-
-Tek bir dondurulmuş sözleşme ([`gokturk-core`](https://github.com/GokturkFK/gokturk-core)) etrafında kurulmuş, air-gap ortamlara hazır modüler bir güvenlik platformu. Her ürün aynı korelasyon motoruna bağlanır ve **tasarımı gereği sıfır yanlış pozitif** üreten ortak bir SOC alarm akışını besler.
-
-| Repo | Katman | Teknoloji | Özet |
-| :--- | :---: | :--- | :--- |
-| [**`gokturk-core`**](https://github.com/GokturkFK/gokturk-core) | Ortak Çekirdek | Go 1.25 | Dondurulmuş `trap` sözleşmesi (`Provider`, `Decoder`, `TripEvent`) ve belirlenimci, sıfır-FP `correlate` motoru (`High` → `Critical` kampanya birleştirme). |
-| [**`gokturk-deception-mesh`**](https://github.com/GokturkFK/gokturk-deception-mesh) | Platform P1 | Go · NATS JetStream · PostgreSQL · Streamlit | Air-gap kimlik kanaryası platformu. Çalınan servis hesabı kullanımını ≤5 saniyede tespit eder; SIEM (CEF), Telegram ve webhook'lara dağıtır. |
-| [**`gokkalkan`**](https://github.com/GokturkFK/gokkalkan) | Platform P2 | Go · PostgreSQL · MITRE ATLAS | Ajan tabanlı yapay zekâ çalışma zamanı güvenliği: varsayılan-reddet MCP egress proxy, ajan honeypot araçları, tool-poisoning tespiti ve imzalı işlem makbuzları. |
-| [**`gokzincir`**](https://github.com/GokturkFK/gokzincir) | Platform P3 | Go · PostgreSQL · MITRE ATT&CK | İnsan-olmayan kimlik (NHI) envanteri, blast-radius grafik analizi ve fark edilmeyen sahte NHI ekimiyle sıfır-FP yanal hareket tespiti. |
-
-### Uzmanlaşmış Güvenlik Araştırma ve Uyumluluk Araçları (Python)
-
-| Repo | Alan | Teknoloji | Özet |
-| :--- | :--- | :--- | :--- |
-| [**`gokturk-av`**](https://github.com/GokturkFK/gokturk-av) | Otomotiv Siber Güvenliği | Python · Streamlit · SQLite · SocketCAN | Otonom shuttle'lar için uçtan uca güvenlik testi ve uyumluluk platformu. **55/69 UN R155 Annex 5** vektörü (yazılımla erişilebilenlerin %100'ü), **29 test modülü**, otomatik **ISO/SAE 21434 TARA** ve `.docx` denetim raporları. |
-| [**`gokturk-honeypot-soc`**](https://github.com/GokturkFK/gokturk-honeypot-soc) | Aktif Savunma ve SOC | Python · Streamlit · IsolationForest · SQLite | Çok servisli honeypot (SSH, FTP, MySQL, Web); hibrit ML davranış analizi, MITRE ATT&CK eşleme, APT korelasyonu, Canary honeydoc'lar ve otomatik PDF/Telegram raporlama. |
-| [**`gokturk-bypass`**](https://github.com/GokturkFK/gokturk-bypass) | Saldırı Keşfi | Python · FastAPI · React · SQLite | İzin-öncelikli, fail-closed WAF/CDN araştırma platformu; pasif Origin Mapper (crt.sh, favicon hash, VHost diff) sonuçlarını doğrudan aktif BypassBench kanıt üretimine bağlar. |
+Ticari ve ürün odaklı çalışmalarımızı özel geliştirme ortamlarımızda sürdürürken, siber güvenlik ekosistemindeki araç ve platformlarımızı açık kaynak olarak toplulukla paylaşıyoruz.
 
 ---
 
-## Mühendislik İlkelerimiz
+## 1. Featured Products *(Öne Çıkan Ürünler)*
 
-- **Tasarımı Gereği Sıfır Yanlış Pozitif:** Aldatma platformlarımızda alarmlar gürültülü anomali eşiklerinden değil, yalnızca kesin kanarya/tuzak eşleşmelerinden doğar.
-- **Air-Gap ve Self-Hosted Önceliği:** Kurumsal ve izole ağlarda harici bağımlılık olmadan çalışabilen Docker yığınları ve tekrarlanabilir kurulum süreçleri.
-- **Dondurulmuş Sözleşmeler ve Temiz Mimari:** Servisler arası açık wire contract'lar, modüler yapı ve her kritik teknik kararın belgelenmesi.
-- **Sürekli Güvenlik Doğrulaması:** Otomatik CI testleri, konteyner zafiyet taraması (Trivy) ve sorumlu zafiyet bildirimi ([`SECURITY.md`](../SECURITY.md)).
+> *Aşağıdaki ürünler ticari/özel geliştirme kapsamında olup kaynak kodları herkese açık değildir.*
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🦺 İSG Platformu
+*Kurumsal SaaS · Web & Mobil*
+
+İş sağlığı ve güvenliği süreçlerini uçtan uca dijitalleştirmek üzere geliştirilen, **6331 sayılı İş Sağlığı ve Güvenliği Kanunu** ve veri mahremiyeti gereksinimlerini odağına alan kurumsal yönetim platformu.
+
+- Kurum, saha ve çalışan güvenliği süreçlerinin tek merkezden yönetimi
+- Web yönetim paneli ve çevrimdışı kullanıma uygun mobil saha deneyimi
+- Denetlenebilirlik, rol tabanlı erişim ve mevzuat uyumu odağı
+
+</td>
+<td width="50%" valign="top">
+
+### 🎓 Dershane & Öğrenci Koçluğu SaaS
+*Çok Kiracılı Eğitim Platformu · Web & Mobil*
+
+Eğitim kurumları, akademik koçlar, öğrenciler ve veliler arasındaki günlük iş akışlarını birleştiren çok kiracılı eğitim ve koçluk platformu.
+
+- Öğrenci koçluğu, çalışma takibi, ödev, deneme ve yoklama süreçleri
+- Kurum yönetimi, veli bilgilendirme ve mobil uygulama desteği
+- Çok kiracılı kurum yapısı ve beyaz etiketli (white-label) marka uyarlaması
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+
+### 🌾 Agri-ERP *(Geliştirme Aşamasında — Prototip)*
+*Çevrimdışı Öncelikli Çiftlik Yönetimi*
+
+Karma çiftliklerde bitkisel ve hayvansal üretim takibini tek bir veri modelinde birleştirmeyi hedefleyen, düşük bağlantılı saha koşulları için tasarlanan erken aşama çiftlik yönetim prototipi.
+
+</td>
+</tr>
+</table>
 
 ---
 
-## Teknoloji Yığını (Açık Kaynak)
+## 2. Game Development *(Oyun Geliştirme)*
 
-| Alan | Teknolojiler |
+### 🐎 Ötüken *(Geliştirme Aşamasında)*
+*Tarihî Bozkır Yönetim & Strateji Simülasyonu · Web & Mobil*
+
+Göktürk dönemi bozkırında geçen tek oyunculu bir yönetim simülasyonu. Bir obadan başlayarak sürüleri, boyları ve kaynakları yönetip bir kağanlık kurmaya odaklanır; oyuncu kararlarının doğrudan sonuç doğurduğu, deterministik mekanikler üzerine kurulu bir strateji deneyimi sunar.
+
+- **Platform hedefi:** Önce web üzerinden test, ardından Android ve iOS dağıtımı
+- **Tasarım yaklaşımı:** Oyuncu kararlarına dayalı derin simülasyon döngüsü, veri odaklı tarihî olaylar ve özgün görsel tasarım
+
+---
+
+## 3. Enterprise Solutions *(Kurumsal Yazılım Çözümleri)*
+
+GokturkFK, yüksek güvenilirlik ve veri egemenliği gerektiren alanlarda kurumlara yönelik uçtan uca yazılım mühendisliği yaklaşımı sunar:
+
+| Çözüm Alanı | Yaklaşımımız |
 | :--- | :--- |
-| **Güvenlik ve Backend** | Go 1.25, Python 3.10+, FastAPI, NATS JetStream, PostgreSQL, SQLite |
-| **Arayüz ve Görselleştirme** | Streamlit, React |
-| **Altyapı ve Kalite** | Docker ve Compose, GitHub Actions CI, Trivy, `golangci-lint`, Pytest, Ruff |
-| **Standartlar ve Çerçeveler** | MITRE ATT&CK, MITRE ATLAS, OWASP Agentic Top 10, UN R155 Annex 5, ISO/SAE 21434 (TARA) |
+| **Çok Kiracılı SaaS Sistemleri** | Web ve mobil istemcilerle bütünleşik, kurum bazlı izolasyon ve rol yönetimine sahip sürdürülebilir ürünler. |
+| **Mevzuat ve Veri Mahremiyeti Uyumu** | KVKK ve sektörel düzenlemelere uygun, kurum içi (self-hosted) veya izole (air-gapped) çalışabilen dağıtım modelleri. |
+| **Güvenlik Odaklı Mühendislik** | Tasarım aşamasından itibaren denetlenebilirlik, en az yetki ilkesi, otomatik testler ve güvenli CI/CD teslimat hatları. |
+| **Web & Mobil Ürün Geliştirme** | Çevrimdışı öncelikli saha uygulamaları, kurumsal yönetim panelleri ve çok dilli ürün vitrinleri. |
+
+---
+
+## 4. Open Source *(Açık Kaynak Projeler)*
+
+Siber güvenlik alanındaki açık kaynak platform ve araştırma araçlarımız doğrudan GitHub üzerinden erişilebilir:
+
+### Göktürk Güvenlik Platformu (Go)
+
+| Repo | Katman | Özet |
+| :--- | :---: | :--- |
+| [**`gokturk-core`**](https://github.com/GokturkFK/gokturk-core) | Çekirdek | Paylaşılan Go tuzak sözleşmesi (`trap`) ve belirlenimci sıfır-FP korelasyon motoru (`correlate`). |
+| [**`gokturk-deception-mesh`**](https://github.com/GokturkFK/gokturk-deception-mesh) | Platform P1 | Air-gap ortamlara hazır, sıfır yanlış pozitifli kimlik kanaryası ve birleşik SOC alarm platformu. |
+| [**`gokkalkan`**](https://github.com/GokturkFK/gokkalkan) | Platform P2 | Ajan tabanlı yapay zekâ çalışma zamanı güvenliği — MCP egress proxy, ajan honeypot ve tool-poisoning tespiti. |
+| [**`gokzincir`**](https://github.com/GokturkFK/gokzincir) | Platform P3 | İnsan-olmayan kimlik (NHI) envanteri, blast-radius grafiği ve sahte kimlik tabanlı yanal hareket tespiti. |
+
+### Güvenlik Araştırma & Uyumluluk Araçları (Python)
+
+| Repo | Alan | Özet |
+| :--- | :--- | :--- |
+| [**`gokturk-av`**](https://github.com/GokturkFK/gokturk-av) | Otomotiv Güvenliği | Otonom shuttle'lar için **55/69 UN R155 Annex 5** vektörünü kapsayan test ve **ISO/SAE 21434 TARA** raporlama platformu. |
+| [**`gokturk-honeypot-soc`**](https://github.com/GokturkFK/gokturk-honeypot-soc) | Aktif Savunma & SOC | Çok servisli honeypot (SSH, FTP, MySQL, Web), makine öğrenmesi destekli analiz, MITRE ATT&CK ve canlı SOC paneli. |
+| [**`gokturk-bypass`**](https://github.com/GokturkFK/gokturk-bypass) | Saldırı Keşfi | İzin-öncelikli, fail-closed WAF/CDN araştırma ve kanıt üretimi platformu. |
 
 ---
 
@@ -80,35 +128,40 @@ Tek bir dondurulmuş sözleşme ([`gokturk-core`](https://github.com/GokturkFK/g
 
 ## Who We Are
 
-**GokturkFK** is an independent software and cybersecurity engineering team building **high-assurance open-source security platforms** and **enterprise software solutions**.
+**GokturkFK** is an independent software engineering organization building **multi-tenant SaaS products**, **strategy games**, **enterprise software solutions**, and **open-source cybersecurity platforms**.
 
-Our engineering philosophy centers on deterministic, verifiable, and production-ready systems. In open source, we focus on active defense, non-human identity governance, agentic AI runtime security, and regulatory compliance testing—alongside end-to-end software engineering and DevSecOps work in enterprise domains.
+## 1. Featured Products *(Private Commercial & In-Development)*
 
-## Open-Source Cybersecurity Ecosystem
+- **İSG Platform** *(Enterprise SaaS · Web & Mobile)* — End-to-end Occupational Health & Safety management platform focused on Turkish Law No. 6331 compliance, field mobility, auditability, and data privacy.
+- **Dershane & Student Coaching SaaS** *(Multi-Tenant EdTech · Web & Mobile)* — Unified academic coaching, study tracking, attendance, and institutional management platform for tutoring centers, coaches, students, and parents.
+- **Agri-ERP** *(In Development — Prototype)* — Early-stage offline-first mixed-farm management prototype unifying crop and livestock operations for low-connectivity rural environments.
 
-A modular, air-gap-ready security platform built around a single frozen wire contract ([`gokturk-core`](https://github.com/GokturkFK/gokturk-core)). Every product plugs into the same correlation engine and feeds a unified SOC alert stream with **zero false positives by construction**.
+## 2. Game Development
 
-| Repository | Layer / Domain | Stack | Summary |
-| :--- | :---: | :--- | :--- |
-| [**`gokturk-core`**](https://github.com/GokturkFK/gokturk-core) | Shared Kernel | Go 1.25 | Frozen `trap` wire contract and deterministic zero-FP `correlate` engine (`High` → `Critical` campaign merging). |
-| [**`gokturk-deception-mesh`**](https://github.com/GokturkFK/gokturk-deception-mesh) | Platform P1 | Go · NATS JetStream · PostgreSQL · Streamlit | Air-gapped credential canary platform; detects stolen service-account usage in ≤5 s and fans out to SIEM (CEF), Telegram, and webhooks. |
-| [**`gokkalkan`**](https://github.com/GokturkFK/gokkalkan) | Platform P2 | Go · PostgreSQL · MITRE ATLAS | Agentic AI runtime security: deny-by-default MCP egress proxy, agent honeypot tools, tool-poisoning detection, signed action receipts. |
-| [**`gokzincir`**](https://github.com/GokturkFK/gokzincir) | Platform P3 | Go · PostgreSQL · MITRE ATT&CK | NHI inventory, blast-radius graph analysis, and stealth decoy NHI seeding with zero-FP lateral movement detection. |
-| [**`gokturk-av`**](https://github.com/GokturkFK/gokturk-av) | Automotive | Python · Streamlit · SocketCAN | **55/69 UN R155 Annex 5** vectors, **29 test modules**, automated **ISO/SAE 21434 TARA** and `.docx` audit reports. |
-| [**`gokturk-honeypot-soc`**](https://github.com/GokturkFK/gokturk-honeypot-soc) | Active Defense | Python · Streamlit · IsolationForest | Multi-service honeypot with hybrid ML behavioral analysis, MITRE ATT&CK mapping, APT correlation, and automated reporting. |
-| [**`gokturk-bypass`**](https://github.com/GokturkFK/gokturk-bypass) | Offensive Recon | Python · FastAPI · React | Permission-first, fail-closed WAF/CDN research chaining passive origin discovery into active bypass proof generation. |
+- **Ötüken** *(In Development · Web & Mobile)* — Single-player historical steppe management and strategy simulation set in the Göktürk era, built around deterministic mechanics and consequence-driven player agency.
 
-## Engineering Principles
+## 3. Enterprise Solutions
 
-- **Zero false positives by construction** — alerts stem strictly from deterministic canary/decoy matches.
-- **Air-gap & self-hosted first** — reproducible Docker stacks that run cleanly in isolated environments.
-- **Frozen contracts & clean architecture** — versioned wire contracts and modular boundaries across services.
-- **Continuous verification** — automated CI test suites, Trivy container scanning, and responsible disclosure ([`SECURITY.md`](../SECURITY.md)).
+- **Multi-Tenant SaaS Engineering:** Web and mobile platforms designed with tenant isolation, role-based access, and long-term maintainability.
+- **Regulatory & Data Sovereignty Focus:** Self-hosted and air-gap-ready deployments built for privacy-sensitive environments (KVKK / GDPR).
+- **Security-by-Design Delivery:** Least-privilege architecture, automated verification, and hardened CI/CD workflows.
+
+## 4. Open Source
+
+| Repository | Domain | Summary |
+| :--- | :--- | :--- |
+| [**`gokturk-core`**](https://github.com/GokturkFK/gokturk-core) | Shared Go Kernel | Frozen `trap` wire contract & deterministic zero-FP `correlate` engine. |
+| [**`gokturk-deception-mesh`**](https://github.com/GokturkFK/gokturk-deception-mesh) | Deception (P1) | Air-gapped credential canary platform & unified SOC alert feed. |
+| [**`gokkalkan`**](https://github.com/GokturkFK/gokkalkan) | Agentic AI Security (P2) | Deny-by-default MCP egress proxy, agent honeypots & tool-poisoning detection. |
+| [**`gokzincir`**](https://github.com/GokturkFK/gokzincir) | NHI Governance (P3) | Non-Human Identity inventory, blast-radius graph & stealth decoy detection. |
+| [**`gokturk-av`**](https://github.com/GokturkFK/gokturk-av) | Automotive Security | Autonomous shuttle testing suite (**55/69 UN R155 Annex 5**) & automated ISO/SAE 21434 TARA. |
+| [**`gokturk-honeypot-soc`**](https://github.com/GokturkFK/gokturk-honeypot-soc) | Active Defense & SOC | Multi-service honeypot with ML behavioral analysis, MITRE ATT&CK & live SOC dashboard. |
+| [**`gokturk-bypass`**](https://github.com/GokturkFK/gokturk-bypass) | Offensive Recon | Permission-first, fail-closed WAF/CDN research & proof-generation platform. |
 
 </details>
 
 ---
 
 <div align="center">
-  <sub><a href="https://github.com/uzunkubra50">@uzunkubra50</a> & <a href="https://github.com/fetihcakmak">@fetihcakmak</a> tarafından geliştirilmektedir · <a href="https://github.com/GokturkFK">GokturkFK</a></sub>
+  <sub><a href="https://github.com/uzunkubra50">@uzunkubra50</a> & <a href="https://github.com/fetihcakmak">@fetihcakmak</a> · <a href="https://github.com/GokturkFK">GokturkFK</a> · <a href="../SECURITY.md">Security Policy</a> · <a href="../CONTRIBUTING.md">Contributing</a></sub>
 </div>
